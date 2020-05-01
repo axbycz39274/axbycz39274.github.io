@@ -8,7 +8,128 @@
     </style>
   </head>
   <body>
-    <h1> hi </h1>
+    <h1>This website is for you to solve a triangle</h1>
+    <p> you need to input at least 3 values for the program to solve the triangle</p>
+    <p>do not delete the "0"s for the balues you don't know</p>
+    <p>Will only have output if the triangle is solvable and have one solution</p>
+    <p>Angle A<input = 'text' value = "0" id = "AngleA"></p>
+    <p>Angle B<input = 'text' value = "0" id = "AngleB"></p>
+    <p>Angle C<input = 'text' value = "0" id = "AngleC"></p>
+    <p>Side A<input = 'text' value = "0" id = "SideA"></p>
+    <p>Side B<input = 'text' value = "0" id = "SideB"></p>
+    <p>Side C<input = 'text' value = "0" id = "SideC"></p>
+    <button type = "button" onclick = "getInput();">get result</button>
+    <p>AngleA:<p id = "answerAngleA"></p></p>
+    <p>AngleB:<p id = "answerAngleB"></p></p>
+    <p>AngleC:<p id = "answerAngleC"></p></p>
+    <p>SideA:<p id = "answerSideA"></p></p>
+    <p>SideB:<p id = "answerSideB"></p></p>
+    <p>SideC:<p id = "answerSideC"></p></p>
+    <script>
+    function getInput(){
+      alert("567");
+      var A = document.getElementById("AngleA").value;
+      var B = document.getElementById("AngleB").value;
+      var C = document.getElementById("AngleC").value;
+      var a = document.getElementById("SideA").value;
+      var b = document.getElementById("SideB").value;
+      var c = document.getElementById("SideC").value;
+      var A = parseFloat(A,10)
+      var B = parseFloat(B,10)
+      var C = parseFloat(C,10)
+      var a = parseFloat(a,10)
+      var b = parseFloat(b,10)
+      var c = parseFloat(c,10)
+      if (A+B+C != 180){
+        alert("The angles cannot make a triangle")
+      }
+      if (a!= 0 && b!= 0 && c!= 0 && (Math.max(a,b,c)>= 0.5*(a+b+c))){
+        alert("The side length cannot make a triangle")
+      }
+      if (isNaN(a)){
+        alert("Wrong input")
+      }
+      if (isNaN(b)){
+        alert("Wrong input")
+      }
+      if (isNaN(c)){
+        alert("Wrong input")
+      }
+      if (isNaN(A)){
+        alert("Wrong input")
+      }
+      if (isNaN(B)){
+        alert("Wrong input")
+      }
+      if (isNaN(C)){
+        alert("Wrong input")
+      }
+      if (a!= 0 && b!= 0 && c!= 0){
+        var A = Math.acos((b*b+c*c-a*a)/(2*b*c))*180/3.14159265
+        var B = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/3.14159265
+        var C = Math.acos((b*b+a*a-c*c)/(2*a*b))*180/3.14159265
+      }
+      if (a!= 0 && b!= 0 && c!= 0){
+        var A = Math.acos((b*b+c*c-a*a)/(2*b*c))*180/3.14159265
+        var B = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/3.14159265
+        var C = Math.acos((b*b+a*a-c*c)/(2*a*b))*180/3.14159265
+      }
+      if (a!= 0 && A!= 0){
+        if (C = 0){
+          var C = 180 - A
+        }
+        if (B=0){
+          var B = 180-A
+        }
+        b = Math.sin(b)*a/(Math.sin(a)*180/Math.pi)
+        c = Math.sin(c)*a/(Math.sin(a)*180/Math.pi)
+      }
+      if (b!= 0 && B!= 0){
+        if (C = 0){
+          var C = 180 - C - B
+        }
+        if (A = 0){
+          var B = 180 - A - B
+        }
+        a = Math.sin(a)*b/(Math.sin(b)*180/Math.pi)
+        c = Math.sin(c)*b/(Math.sin(b)*180/Math.pi)
+      }
+      if (c!= 0 && C!= 0){
+        if (B = 0){
+          var B = 180 - A-C
+        }
+        if (A = 0){
+          var A = 180-B-C
+        }
+        b = Math.sin(b)*c/(Math.sin(c)*180/Math.pi)
+        a = Math.sin(a)*c/(Math.sin(c)*180/Math.pi)
+      }
+      alert("1")
+      if(b!= 0 && c!= 0 && A!= 0){
+        var a = b*b+c*c-2*b*c*Math.cos(A*180/pi)
+        alert("2")
+        var B = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/3.14159265
+        var C = 180-A-B
+      }
+      if(b!= 0 && a!= 0 && C!= 0){
+        var c = b*b+c*c-2*b*c*Math.cos(C)
+        var B = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/3.14159265
+        var A = 180-C-B
+      }
+      if(a!= 0 && c!= 0 && B!= 0){
+        var b = b*b+c*c-2*b*c*Math.cos(B)
+        var C = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/3.14159265
+        var A = 180-C-B
+      }
+      document.getElementById("answerAngleA").innerHTML = A
+      document.getElementById("answerAngleB").innerHTML = B
+      document.getElementById("answerAngleC").innerHTML = C
+      document.getElementById("answerSideA").innerHTML = a
+      document.getElementById("answerSideB").innerHTML = b
+      document.getElementById("answerSideC").innerHTML = c
+    }
+    </script>
+
     
     </body>
 </html>
