@@ -1,0 +1,29 @@
+img {
+    height: 40px;
+    width: 40px;
+    white-space: nowrap;
+}
+p {
+  color:blue;
+}
+@media only screen and (min-width: 800px) {
+
+  p {
+  color: green;
+  display: inline ;
+  }
+}
+input{
+  width: 25px;
+}
+body{
+  background-color: red;
+
+};
+td, th {
+  border: 5px solid black;
+  text-align: left;
+}
+#date{
+  color: yellow;
+}
